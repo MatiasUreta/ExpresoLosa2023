@@ -6,6 +6,10 @@ html {
   width: 100%;
 }
 
+body {
+  background-color: lightgray;
+}
+
 /* HEADER */
 header {
   background-color: rgb(2, 2, 158);
@@ -39,6 +43,37 @@ header {
   /* Transición suave */
   background-color: black;
 }
+
+.btnListaMenu {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.btnListaMenu:hover {
+  background-color: rgb(2, 2, 158);
+  color: white;
+}
+
+.btnSeguimiento {
+  background-color: rgb(2, 2, 158);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+
+.btnSeguimiento:hover {
+  background-color: blue;
+  transition: .5s ease;
+}
+
+.btnListaMenuHome {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
 
 .menuLateral.expanded {
   width: 280px;
@@ -99,4 +134,13 @@ header {
   box-shadow: 21px 17px 3px -7px rgba (0, 0, 0, 0.38);
   -webkit-box-shadow: 21px 17px 3px -7px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: 21px 17px 3px -7px rgba(0, 0, 0, 0.38);
+}
+
+/* H2 NUESTRA RECEPTORIA- INDEX */
+.divReceptoria {
+  font-size: 40px;
+  box-shadow: 8px 11px 16px 4px rgba(2, 2, 158, 0.87);
+  -webkit-box-shadow: 8px 11px 16px 4px rgba(2, 2, 158, 0.87);
+  -moz-box-shadow: 8px 11px 16px 4px rgba(2, 2, 158, 0.87);
+  border-radius: 25px;
 }
