@@ -1,0 +1,91 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  background-color: rgb(2, 2, 158);
+
+}
+
+/*logo Losa*/
+.logoLosa {
+  width: 200px;
+  min-width: 180px;
+  max-width: 200px;
+}
+
+.iconoRedes {
+  color: white;
+}
+
+
+/* MENU LATERAL */
+.menuLateral {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* Ancho del menú lateral */
+  overflow: auto;
+  /* Agrega una barra de desplazamiento si el contenido es más largo que la pantalla */
+  width: 40px; /* Ancho de la barra lateral cuando está contraída */
+  transition: width 0.5s; /* Transición suave */
+  background-color: black;
+}
+
+.menuLateral.expanded {
+  width: 280px; /* Ancho de la barra lateral cuando está expandida */
+  z-index: 1;
+}
+
+.contenidoPrincipal {
+  flex-grow: 1;
+  /* Ocupa el espacio restante */
+}
+
+.btnMenuLateral {
+  background-color: white;
+  color: black;
+}
+
+
+/* SECCION NOSOTROS */
+.contenedorIndex {
+  width: 100%;
+  background-color: white;
+  background: rgb(3, 72, 228);
+  background: linear-gradient(90deg, rgba(3, 72, 228, 1) 4%, rgba(0, 0, 0, 0.9808298319327731) 100%);
+  color: white;
+  font-size: 20px;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow:  17px 16px 18px 0px rgba (0, 0, 0, 0.78);
+  -webkit-box-shadow: 17px 16px 18px 0px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 17px 16px 18px 0px rgba(0, 0, 0, 0.78);
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.contenedorIndex {
+  animation-name: fadeIn;
+  animation-duration: 3s ; 
+}
+
+/* CAROUSEL */
+.casrousel {
+  width: auto;
+  height: auto;
+}
+
+
+
+
+
