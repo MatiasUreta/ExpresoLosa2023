@@ -33,13 +33,16 @@ header {
   /* Ancho del menú lateral */
   overflow: auto;
   /* Agrega una barra de desplazamiento si el contenido es más largo que la pantalla */
-  width: 40px; /* Ancho de la barra lateral cuando está contraída */
-  transition: width 0.5s; /* Transición suave */
+  width: 40px;
+  /* Ancho de la barra lateral cuando está contraída */
+  transition: width 0.5s;
+  /* Transición suave */
   background-color: black;
 }
 
 .menuLateral.expanded {
-  width: 280px; /* Ancho de la barra lateral cuando está expandida */
+  width: 280px;
+  /* Ancho de la barra lateral cuando está expandida */
   z-index: 1;
 }
 
@@ -64,19 +67,24 @@ header {
   font-size: 20px;
   border-radius: 25px;
   padding: 10px;
-  box-shadow:  17px 16px 18px 0px rgba (0, 0, 0, 0.78);
+  box-shadow: 17px 16px 18px 0px rgba (0, 0, 0, 0.78);
   -webkit-box-shadow: 17px 16px 18px 0px rgba(0, 0, 0, 0.78);
   -moz-box-shadow: 17px 16px 18px 0px rgba(0, 0, 0, 0.78);
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .contenedorIndex {
   animation-name: fadeIn;
-  animation-duration: 3s ; 
+  animation-duration: 3s;
 }
 
 /* CAROUSEL */
@@ -86,6 +94,9 @@ header {
 }
 
 
-
-
-
+/* CARD RECEPTORIA */
+.cardReceptoria {
+  box-shadow: 21px 17px 3px -7px rgba (0, 0, 0, 0.38);
+  -webkit-box-shadow: 21px 17px 3px -7px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 21px 17px 3px -7px rgba(0, 0, 0, 0.38);
+}
