@@ -79,3 +79,51 @@ window.addEventListener('scroll', function (event) {
         }
     });
 }, false);
+
+
+//ANIMACION PARA EL LOGO
+$(document).ready(function () {
+    $(window).scroll(function () {
+        $('.roll-in-top').each(function () {
+            var top_of_element = $(this).offset().top;
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+            var top_of_screen = $(window).scrollTop();
+
+            if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+                // El elemento está en la vista, agrega la clase de animación
+                $(this).addClass('roll-in-top');
+            } else {
+                // El elemento no está en la vista, remueve la clase de animación
+                $(this).removeClass('roll-in-top');
+            }
+        });
+    });
+});
+
+
+
+//MODAL
+/*$(document).ready(function () {
+    // Verifica si la cookie 'mostrarModal' existe
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('mostrarModal='))) {
+        // No muestra el modal si la cookie existe
+    } else {
+        // Muestra el modal si la cookie no existe
+        $('#myModal').modal('show');
+        // Crea la cookie 'mostrarModal' para que el modal no se muestre de nuevo
+        document.cookie = "mostrarModal=1";
+    }
+});*/
+
+/*formulario*/
+document.getElementById('myForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var nombre = document.getElementById('nombre').value;
+    if (nombre === '') {
+        event.target.style.animation = 'shake 0.5s';
+        event.target.style.animationIterationCount = '1s';
+    } else {
+        alert('Formulario enviado!');
+    }
+});
