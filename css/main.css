@@ -22,78 +22,16 @@ header {
   min-width: 180px;
   max-width: 200px;
 }
+.logoLosaFooter {
+  margin-left: 200px;
+  width: 220px;
+}
 
 .iconoRedes {
   color: white;
 }
 
 
-/* MENU LATERAL */
-.menuLateral {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  /* Ancho del menú lateral */
-  overflow: auto;
-  /* Agrega una barra de desplazamiento si el contenido es más largo que la pantalla */
-  width: 280px; /* Ancho de la barra lateral cuando está expandida */
-  background-color: black;
-  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
-  transition: width 0.5s; /* Transición suave */
-}
-
-/* Cambia el ancho del menú lateral cuando está contraído */
-.menuLateral.contraido {
-  width: 80px;
-}
-
-/* Oculta el texto cuando el menú está contraído */
-.menuLateral.contraido .nav-link {
-  visibility: hidden;
-}
-
-
-.btnListaMenu {
-  margin: 10px 0;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.btnListaMenu:hover {
-  background-color: rgb(2, 2, 158);
-  color: white;
-}
-
-.btnSeguimiento {
-  background-color: rgb(2, 2, 158);
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid black;
-  font-size: 15px;
-}
-
-.btnSeguimiento:hover {
-  background-color: blue;
-  transition: .5s ease;
-}
-
-.btnListaMenuHome {
-  margin: 10px 0;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-/* CONTENIDO PRINCIPAL */
-.contenidoPrincipal {
-  margin-left: 280px;
-  /* Asegura que el contenido principal no se superponga con el menú */
-}
-
-.btnMenuLateral {
-  background-color: white;
-  color: black;
-}
 
 /* BOTON VER MAS */
 .btnVerMas {
@@ -247,11 +185,6 @@ header {
   background-image: url(../img/mapita.png);
   background-repeat: no-repeat;
   width: 100%;
-}
-
-.logoLosaDos {
-  width: 450px;
-  height: auto;
 }
 
 
@@ -871,10 +804,58 @@ footer {
 
 
 
-
-
-
-
+/* LOGO DOS LOSA */
 .logoLosaDos {
+  width: 85px;
+  margin-left: 0;
+}
+
+/* --------- MENU LATERAL SOLO ICONOS --------------- */
+.menu {
   width: 80px;
+  height: 100vh;
+  position: fixed; /* Fija el menú en su posición */
+  background-color: #333;
+  overflow: hidden;
+  transition: width 0.5s;
+  z-index: 1000; /* Asegura que el menú se superponga a otros elementos */
+}
+
+.menu:hover {
+  width: 200px;
+}
+
+.menu a {
+  display: flex;
+  /* Alinea los elementos de forma horizontal */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: flex-start;
+  /* Alinea los elementos a la izquierda */
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #555;
+  transition: padding-left 0.5s;
+}
+
+.menu a:hover {
+  background-color: #0e2848;
+}
+
+.menu a i {
+  margin-right: 10px;
+}
+
+.menu:hover a {
+  padding-left: 50px;
+}
+
+.menu a span {
+  display: none;
+}
+
+.menu:hover a span {
+  display: inline;
 }
