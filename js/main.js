@@ -22,12 +22,6 @@ function setTheme(theme) {
     }
 }
 
-/*MENU LATERAL*/
-function toggleSidebar() {
-    var sidebar = document.querySelector(".menuLateral");
-    sidebar.classList.toggle("expanded");
-}
-
 
 
 /*ANIMACIONES*/
@@ -44,16 +38,14 @@ function isInViewport(element) {
 
 // Escucha el evento de scroll
 window.addEventListener('scroll', function (event) {
-    // Obtén todos los elementos con la clase 'scale-in-ver-center'
     const elements = document.querySelectorAll('.scale-in-ver-center');
     elements.forEach(function (element) {
-        if (isInViewport(element)) {
-            // Si el elemento está en el viewport, agrega la clase 'animate'
-            element.classList.add('animate');
-        }
+      if (isInViewport(element)) {
+        element.classList.add('animate');
+      }
     });
-}, false);
-
+  }, false);
+  
 
 
 /*ANIMACIONES DE FOCUS*/
@@ -127,3 +119,7 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
         alert('Formulario enviado!');
     }
 });
+
+
+
+

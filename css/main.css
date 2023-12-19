@@ -37,12 +37,22 @@ header {
   /* Ancho del menú lateral */
   overflow: auto;
   /* Agrega una barra de desplazamiento si el contenido es más largo que la pantalla */
-  width: 40px;
-  /* Ancho de la barra lateral cuando está contraída */
-  transition: width 0.5s;
-  /* Transición suave */
+  width: 280px; /* Ancho de la barra lateral cuando está expandida */
   background-color: black;
+  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  transition: width 0.5s; /* Transición suave */
 }
+
+/* Cambia el ancho del menú lateral cuando está contraído */
+.menuLateral.contraido {
+  width: 80px;
+}
+
+/* Oculta el texto cuando el menú está contraído */
+.menuLateral.contraido .nav-link {
+  visibility: hidden;
+}
+
 
 .btnListaMenu {
   margin: 10px 0;
@@ -74,16 +84,10 @@ header {
   font-weight: 400;
 }
 
-
-.menuLateral.expanded {
-  width: 280px;
-  /* Ancho de la barra lateral cuando está expandida */
-  z-index: 1;
-}
-
+/* CONTENIDO PRINCIPAL */
 .contenidoPrincipal {
-  flex-grow: 1;
-  /* Ocupa el espacio restante */
+  margin-left: 280px;
+  /* Asegura que el contenido principal no se superponga con el menú */
 }
 
 .btnMenuLateral {
@@ -91,26 +95,48 @@ header {
   color: black;
 }
 
+/* BOTON VER MAS */
+.btnVerMas {
+  color: white;
+  background-color: #0e2848;
+}
+
+.btnVerMas:hover {
+  color: white;
+  background-color: #0056b3;
+  border: 2px solid #0056b3;
+  transition: .4s ease;
+}
+
 
 /* SECCION NOSOTROS */
 @keyframes typing {
-  from { width: 0 }
+  from {
+    width: 0
+  }
 }
 
 @keyframes blink-caret {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: white; }
+
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
 }
 
 .principalNosotros {
-  width: 15.5em;  
+  width: 15.5em;
   white-space: nowrap;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);  
+  border-right: .15em solid rgb(255, 255, 255);
   font-size: 2em;
   margin: 0 auto;
   text-align: center;
-  animation: 
+  animation:
     typing 5s steps(40, end) forwards,
     blink-caret 6s step-end;
 }
@@ -173,14 +199,15 @@ header {
   width: 80px;
   height: 80px;
 }
+
 .icono:hover {
- color: rgba(2, 2, 158, 0.87);
+  color: rgba(2, 2, 158, 0.87);
 }
 
 @media (max-width: 768px) {
   .icono {
-      width: 60px;
-      height: 60px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -191,9 +218,11 @@ header {
   font-weight: 800;
   border-radius: 40px;
 }
-.iconoHorario{
+
+.iconoHorario {
   color: black;
 }
+
 .iconoHorario:hover {
   color: white;
   transition: .6s ease;
@@ -209,14 +238,17 @@ header {
   padding: 10px 10px;
   border: 1px solid black;
 }
+
 .horarios:hover {
-  background: linear-gradient(90deg, rgba(4,29,171,1) 20%, rgba(229,230,247,1) 89%);
+  background: linear-gradient(90deg, rgba(4, 29, 171, 1) 20%, rgba(229, 230, 247, 1) 89%);
 }
+
 .mapaMundi {
   background-image: url(../img/mapita.png);
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   width: 100%;
 }
+
 .logoLosaDos {
   width: 450px;
   height: auto;
@@ -225,12 +257,14 @@ header {
 
 /*CARD RECEPTORIAS*/
 .cardReceptoria {
-  transition: transform .4s; /* Animación suave */
+  transition: transform .4s;
+  /* Animación suave */
   gap: 20px;
 }
 
 .cardReceptoria:hover {
-  transform: scale(1.1); /* Aumenta el tamaño del elemento un 10% */
+  transform: scale(1.1);
+  /* Aumenta el tamaño del elemento un 10% */
 }
 
 /*FOMULARIO*/
@@ -239,20 +273,27 @@ form {
   margin: 50px auto;
   padding: 30px;
   background-color: #0e2848;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
+
 label {
   display: block;
   margin-bottom: 5px;
   color: white;
 }
-input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 3px;
 }
+
 input[type="submit"] {
   background-color: #007BFF;
   color: #fff;
@@ -261,28 +302,64 @@ input[type="submit"] {
   border-radius: 3px;
   cursor: pointer;
 }
+
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .formulario {
   background-image: url(../img/mapita.png);
   background-repeat: no-repeat;
-  background-size: auto; /* Esto hará que la imagen de fondo cubra todo el elemento */
-  background-position: center; /* Esto centrará la imagen de fondo */
+  background-size: auto;
+  /* Esto hará que la imagen de fondo cubra todo el elemento */
+  background-position: center;
+  /* Esto centrará la imagen de fondo */
   width: 100%;
 }
 
@@ -292,6 +369,7 @@ footer {
   background-color: #0e2848;
   color: white;
 }
+
 .listFooter {
   color: white;
 }
@@ -311,8 +389,8 @@ footer {
 
 /* ANIMACION DE TEXTO CRECE HACIA ADELANTE */
 .tracking-out-expand-fwd-top {
-	-webkit-animation: tracking-out-expand-fwd-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: tracking-out-expand-fwd-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: tracking-out-expand-fwd-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: tracking-out-expand-fwd-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 /* ----------------------------------------------
@@ -327,45 +405,51 @@ footer {
  * animation tracking-out-expand-fwd-top
  * ----------------------------------------
  */
- @-webkit-keyframes tracking-out-expand-fwd-top {
+@-webkit-keyframes tracking-out-expand-fwd-top {
   0% {
     -webkit-transform: translateZ(0) translateY(0);
-            transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
     opacity: 1;
   }
+
   60% {
     opacity: 0.8;
   }
+
   100% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(300px) translateY(-200px);
-            transform: translateZ(300px) translateY(-200px);
+    transform: translateZ(300px) translateY(-200px);
     opacity: 0;
   }
 }
+
 @keyframes tracking-out-expand-fwd-top {
   0% {
     -webkit-transform: translateZ(0) translateY(0);
-            transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
     opacity: 1;
   }
+
   60% {
     opacity: 0.8;
   }
+
   100% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(300px) translateY(-200px);
-            transform: translateZ(300px) translateY(-200px);
+    transform: translateZ(300px) translateY(-200px);
     opacity: 0;
   }
 }
 
 
- /* ANIMACION DE GIRO DE IMG */
- .scale-in-ver-center.animate {
-	-webkit-animation: scale-in-ver-center 2s 1s both;
-	        animation: scale-in-ver-center 2s 1s both;
+/* ANIMACION DE GIRO DE IMG */
+.scale-in-ver-center.animate {
+  -webkit-animation: scale-in-ver-center 2s 1s both;
+  animation: scale-in-ver-center 2s 1s both;
 }
+
 /* ----------------------------------------------
  * Generated by Animista on 2023-12-7 0:36:52
  * Licensed under FreeBSD License.
@@ -373,7 +457,33 @@ footer {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- @-webkit-keyframes scale-in-ver-center{0%{-webkit-transform:scaleY(0);transform:scaleY(0);opacity:1}100%{-webkit-transform:scaleY(1);transform:scaleY(1);opacity:1}}@keyframes scale-in-ver-center{0%{-webkit-transform:scaleY(0);transform:scaleY(0);opacity:1}100%{-webkit-transform:scaleY(1);transform:scaleY(1);opacity:1}}
+@-webkit-keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1
+  }
+}
+
+@keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1
+  }
+}
 
 
 
@@ -381,8 +491,8 @@ footer {
 
 /* ANIMACION DE FOCUS */
 .focus-in-expand.animate {
-	-webkit-animation: focus-in-expand 1.5s cubic-bezier(.25,.46,.45,.94) both;
-	        animation: focus-in-expand 1.5s cubic-bezier(.25,.46,.45,.94) both;
+  -webkit-animation: focus-in-expand 1.5s cubic-bezier(.25, .46, .45, .94) both;
+  animation: focus-in-expand 1.5s cubic-bezier(.25, .46, .45, .94) both;
 }
 
 
@@ -393,26 +503,180 @@ footer {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- @-webkit-keyframes focus-in-expand{0%{letter-spacing:-.5em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-expand{0%{letter-spacing:-.5em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0
+  }
+
+  100% {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1
+  }
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0
+  }
+
+  100% {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1
+  }
+}
 
 
 
- /* ANIMACIONES PARA EL BOTON DEL MENU LATERAL */
- .bounce-right{-webkit-animation:bounce-right 1s both;animation:bounce-right 1s both}
+/* ANIMACIONES PARA EL BOTON DEL MENU LATERAL */
+.bounce-right {
+  -webkit-animation: bounce-right 1s both;
+  animation: bounce-right 1s both
+}
 
- /* ----------------------------------------------
+/* ----------------------------------------------
  * Generated by Animista on 2023-12-7 1:1:54
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-@-webkit-keyframes bounce-right{0%{-webkit-transform:translateX(48px);transform:translateX(48px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateX(26px);transform:translateX(26px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateX(13px);transform:translateX(13px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateX(6.5px);transform:translateX(6.5px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateX(4px);transform:translateX(4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%,98%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}@keyframes bounce-right{0%{-webkit-transform:translateX(48px);transform:translateX(48px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateX(26px);transform:translateX(26px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateX(13px);transform:translateX(13px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateX(6.5px);transform:translateX(6.5px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateX(4px);transform:translateX(4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%,98%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}
+@-webkit-keyframes bounce-right {
+  0% {
+    -webkit-transform: translateX(48px);
+    transform: translateX(48px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1
+  }
+
+  24% {
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  65% {
+    -webkit-transform: translateX(13px);
+    transform: translateX(13px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  82% {
+    -webkit-transform: translateX(6.5px);
+    transform: translateX(6.5px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  93% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  25%,
+  55%,
+  75%,
+  87%,
+  98% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1
+  }
+}
+
+@keyframes bounce-right {
+  0% {
+    -webkit-transform: translateX(48px);
+    transform: translateX(48px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1
+  }
+
+  24% {
+    opacity: 1
+  }
+
+  40% {
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  65% {
+    -webkit-transform: translateX(13px);
+    transform: translateX(13px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  82% {
+    -webkit-transform: translateX(6.5px);
+    transform: translateX(6.5px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  93% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+  }
+
+  25%,
+  55%,
+  75%,
+  87%,
+  98% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1
+  }
+}
 
 
 
 /*ANIMACION DE ACERCAMIENTO DE PORTADA*/
-.kenburns-bottom{-webkit-animation:kenburns-bottom 5s ease-out both;animation:kenburns-bottom 5s ease-out both} 
+.kenburns-bottom {
+  -webkit-animation: kenburns-bottom 5s ease-out both;
+  animation: kenburns-bottom 5s ease-out both
+}
 
 /* ----------------------------------------------
  * Generated by Animista on 2023-12-7 1:4:13
@@ -421,23 +685,89 @@ footer {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- @-webkit-keyframes kenburns-bottom{0%{-webkit-transform:scale(1) translateY(0);transform:scale(1) translateY(0);-webkit-transform-origin:50% 84%;transform-origin:50% 84%}100%{-webkit-transform:scale(1.25) translateY(15px);transform:scale(1.25) translateY(15px);-webkit-transform-origin:bottom;transform-origin:bottom}}@keyframes kenburns-bottom{0%{-webkit-transform:scale(1) translateY(0);transform:scale(1) translateY(0);-webkit-transform-origin:50% 84%;transform-origin:50% 84%}100%{-webkit-transform:scale(1.25) translateY(15px);transform:scale(1.25) translateY(15px);-webkit-transform-origin:bottom;transform-origin:bottom}}
+@-webkit-keyframes kenburns-bottom {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 84%;
+    transform-origin: 50% 84%
+  }
 
- /* IMG 2 */
- .kenburns-bottom-left{-webkit-animation:kenburns-bottom-left 5s ease-out .8s both;animation:kenburns-bottom-left 5s ease-out .8s both}
+  100% {
+    -webkit-transform: scale(1.25) translateY(15px);
+    transform: scale(1.25) translateY(15px);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom
+  }
+}
 
- /* ----------------------------------------------
+@keyframes kenburns-bottom {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 84%;
+    transform-origin: 50% 84%
+  }
+
+  100% {
+    -webkit-transform: scale(1.25) translateY(15px);
+    transform: scale(1.25) translateY(15px);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom
+  }
+}
+
+/* IMG 2 */
+.kenburns-bottom-left {
+  -webkit-animation: kenburns-bottom-left 5s ease-out .8s both;
+  animation: kenburns-bottom-left 5s ease-out .8s both
+}
+
+/* ----------------------------------------------
  * Generated by Animista on 2023-12-7 1:10:16
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-@-webkit-keyframes kenburns-bottom-left{0%{-webkit-transform:scale(1) translate(0,0);transform:scale(1) translate(0,0);-webkit-transform-origin:16% 84%;transform-origin:16% 84%}100%{-webkit-transform:scale(1.25) translate(-20px,15px);transform:scale(1.25) translate(-20px,15px);-webkit-transform-origin:left bottom;transform-origin:left bottom}}@keyframes kenburns-bottom-left{0%{-webkit-transform:scale(1) translate(0,0);transform:scale(1) translate(0,0);-webkit-transform-origin:16% 84%;transform-origin:16% 84%}100%{-webkit-transform:scale(1.25) translate(-20px,15px);transform:scale(1.25) translate(-20px,15px);-webkit-transform-origin:left bottom;transform-origin:left bottom}}
+@-webkit-keyframes kenburns-bottom-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 84%;
+    transform-origin: 16% 84%
+  }
+
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+    transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom
+  }
+}
+
+@keyframes kenburns-bottom-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 84%;
+    transform-origin: 16% 84%
+  }
+
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+    transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom
+  }
+}
 
 
 /*ANIMACION DE ENCUADRE DE FOTO*/
-.bg-pan-bl{-webkit-animation:bg-pan-bl 8s both;animation:bg-pan-bl 8s both}
+.bg-pan-bl {
+  -webkit-animation: bg-pan-bl 8s both;
+  animation: bg-pan-bl 8s both
+}
 
 /* ----------------------------------------------
  * Generated by Animista on 2023-12-7 1:31:53
@@ -446,14 +776,33 @@ footer {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- @-webkit-keyframes bg-pan-bl{0%{background-position:100% 0}100%{background-position:0 100%}}@keyframes bg-pan-bl{0%{background-position:100% 0}100%{background-position:0 100%}}
+@-webkit-keyframes bg-pan-bl {
+  0% {
+    background-position: 100% 0
+  }
 
-
- /*ANIMACION PARA EL LOGO*/
- .roll-in-top {
-	-webkit-animation: roll-in-top 1.2s both;
-	        animation: roll-in-top 1.2s both;
+  100% {
+    background-position: 0 100%
+  }
 }
+
+@keyframes bg-pan-bl {
+  0% {
+    background-position: 100% 0
+  }
+
+  100% {
+    background-position: 0 100%
+  }
+}
+
+
+/*ANIMACION PARA EL LOGO*/
+.roll-in-top {
+  -webkit-animation: roll-in-top 1.2s both;
+  animation: roll-in-top 1.2s both;
+}
+
 /* ----------------------------------------------
  * Generated by Animista on 2023-12-7 11:35:49
  * Licensed under FreeBSD License.
@@ -461,4 +810,71 @@ footer {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
- @-webkit-keyframes roll-in-top{0%{-webkit-transform:translateY(-800px) rotate(-540deg);transform:translateY(-800px) rotate(-540deg);opacity:0}100%{-webkit-transform:translateY(0) rotate(0deg);transform:translateY(0) rotate(0deg);opacity:1}}@keyframes roll-in-top{0%{-webkit-transform:translateY(-800px) rotate(-540deg);transform:translateY(-800px) rotate(-540deg);opacity:0}100%{-webkit-transform:translateY(0) rotate(0deg);transform:translateY(0) rotate(0deg);opacity:1}} 
+@-webkit-keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+    transform: translateY(-800px) rotate(-540deg);
+    opacity: 0
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1
+  }
+}
+
+@keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+    transform: translateY(-800px) rotate(-540deg);
+    opacity: 0
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1
+  }
+}
+
+
+
+
+
+
+/* ANIMACION DE LAS IMAGENES EN SECCION INFO GENERAL */
+/* Oculta inicialmente las imágenes */
+.scale-in-ver-center {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Define la animación */
+@keyframes scaleInVerCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplica la animación cuando se añade la clase 'animate' */
+.scale-in-ver-center.animate {
+  animation: scaleInVerCenter 0.5s forwards;
+}
+
+
+
+
+
+
+
+.logoLosaDos {
+  width: 80px;
+}
