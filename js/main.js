@@ -109,17 +109,54 @@ $(document).ready(function () {
 });*/
 
 /*formulario*/
-document.getElementById('myForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    var nombre = document.getElementById('nombre').value;
-    if (nombre === '') {
-        event.target.style.animation = 'shake 0.5s';
-        event.target.style.animationIterationCount = '1s';
-    } else {
-        alert('Formulario enviado!');
+/*const express = require('express');
+const app = express();
+const nodemailer = require('nodemailer');
+
+app.post('/submit-form', (req, res) => {
+    let mailOptions = {
+        from: req.body.email, // dirección de correo del remitente
+        to: '', // dirección de correo del destinatario
+        subject: 'Nueva consulta', // Línea de asunto
+        text: req.body.texto // cuerpo de texto plano
+    };
+
+    switch(req.body.opciones) {
+        case 'seguimientos':
+            mailOptions.to = 'seguimientos@logisticalosa.com.ar';
+            break;
+        case 'reclamos':
+            mailOptions.to = 'reclamos@logisticalosa.com.ar';
+            break;
+        case 'presupuestos':
+            mailOptions.to = 'comercial@logisticalosa.com.ar';
+            break;
+        case 'facturacion':
+            mailOptions.to = 'administracion@logisticalosa.com.ar';
+            break;
+        case 'cobranzas':
+            mailOptions.to = 'cobranzas@logisticalosa.com.ar';
+            break;
+        default:
+            // manejar caso por defecto
     }
+
+    // crear objeto de transporte reutilizable usando SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'tuCorreo@gmail.com',
+            pass: 'tuContraseña'
+        }
+    });
+
+    // enviar correo con objeto de transporte definido
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Mensaje enviado: %s', info.messageId);   
+    });
 });
 
-
-
-
+app.listen(3000, () => console.log('Servidor corriendo en puerto 3000'));*/

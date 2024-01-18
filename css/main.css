@@ -26,6 +26,10 @@ header {
   margin-left: 200px;
   width: 220px;
 }
+.logoLosaMenu {
+  width: 75px;
+  margin-left: -10px;
+}
 
 .iconoRedes {
   color: white;
@@ -111,7 +115,7 @@ header {
 
 /* CAROUSEL */
 .casrousel {
-  width: auto;
+  width: 150px;
   height: auto;
 }
 
@@ -858,4 +862,13 @@ footer {
 
 .menu:hover a span {
   display: inline;
+}
+
+
+
+.carousel-item img {
+  height: auto; /* Esto hará que la altura de la imagen sea automática */
+  max-height: 100vh; /* Esto limitará la altura máxima de la imagen al 50% de la altura de la ventana del navegador */
+  width: 100%; /* Esto hará que la imagen ocupe todo el ancho disponible */
+  object-fit: cover; /* Esto hará que la imagen cubra todo el espacio disponible sin distorsionarse */
 }
